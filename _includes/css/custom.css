@@ -1,0 +1,80 @@
+i.fa.fa-stack-1x:before{
+	margin-left:2px;
+}
+
+.container h1.intro-logo-title{
+	margin:25px 0 50px 0;
+}
+.container h1.intro-logo-title img{
+	height:95px;
+	margin-top:-42px;
+}
+.container h1.intro-logo-title span{
+	font-size:95px;
+	font-weight:bold;
+}
+
+.section{
+	padding-top:170px;
+}
+
+.container h1{
+	font-size:65px;
+	margin:40px 0 75px;
+}
+
+.container h2.sub{
+	/*text-align:left;*/
+	margin:10px 0 5px 0;
+	font-size:25px;
+	font-weight:bold;
+	padding:0;
+}
+
+.container p, .container p:first-of-type{
+	font-size:22px;
+	line-height:30px;
+	margin:0 auto 30px auto;
+	padding:0;
+	max-width:500px;
+	text-align:center;
+}
+
+/* mid size (tablets, landscapes) */
+@media only screen and (max-width: 679px) {
+	nav ul li a{
+		padding:0 5px;
+	}
+
+	.container h1 a{
+		font-size:40px;
+	}
+
+
+	.container h1.intro-logo-title{
+		margin:0 0 50px 0;
+	}
+	.container h1.intro-logo-title img{
+		height:50px;
+		margin-top:-6px;
+	}
+	.container h1.intro-logo-title span{
+		font-size:50px;
+		font-weight:bold;
+	}
+
+	.container h2.sub{
+		font-size:22px;
+		font-weight:bold;
+		padding:0;
+	}
+
+	.container p, .container p:first-of-type{
+		font-size:17px;
+		line-height:22px;
+	}
+}
+
+/* tiny size (phones) */
+@media only screen and (max-width: 380px) {
+}
