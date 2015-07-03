@@ -27,16 +27,18 @@ $.extend($.easing,
 
         //attatch click listeners
     	navItems.on('click', function(event){
-    		event.preventDefault();
-            var navID = $(this).attr("href").substring(1);
-            disableScrollFn = true;
-            activateNav(navID);
-            populateDestinations(); //recalculate these!
-        	$('html,body').animate({scrollTop: sections[navID] - settings.scrollToOffset},
-                settings.scrollSpeed, "easeInOutExpo", function(){
-                    disableScrollFn = false;
-                }
-            );
+            if ($(this).attr("href").indexOf("http://") == -1){
+                event.preventDefault();
+                var navID = $(this).attr("href").substring(1);
+                disableScrollFn = true;
+                activateNav(navID);
+                populateDestinations(); //recalculate these!
+                $('html,body').animate({scrollTop: sections[navID] - settings.scrollToOffset},
+                    settings.scrollSpeed, "easeInOutExpo", function(){
+                        disableScrollFn = false;
+                    }
+                );
+            }
     	});
 
         //populate lookup of clicable elements and destination sections
@@ -59,7 +61,10 @@ $.extend($.easing,
         navItems.each(function(){
             var scrollID = $(this).attr('href').substring(1);
             navs[scrollID] = (settings.activateParentNode)? this.parentNode : this;
-            sections[scrollID] = $(document.getElementById(scrollID)).offset().top;
+            var element = $(document.getElementById(scrollID));
+            if (element && element.offset()){
+                sections[scrollID] = element.offset().top;
+            }
         });
     }
 

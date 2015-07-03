@@ -20,7 +20,20 @@
     <nav><ul>
       {% for node in site.posts reversed %}
         {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
-        <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
+          <li class="p-{{id}}">
+            {% if node.directlink %}
+              <a href="{{node.directlink}}">
+            {% else %}
+              <a href="#{{id}}">
+            {% endif %}
+
+            {% if node.navicon %}
+              <i class="fa fa-{{node.navicon}}"></i>
+            {% else %}
+              {{node.title}}
+            {% endif %}
+            </a>
+          </li>
       {% endfor %}
     </ul></nav>
 
