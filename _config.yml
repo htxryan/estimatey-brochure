@@ -33,10 +33,3 @@ colors:
   purple:    '#c869bf'
   orange:    '#fab125'
   turquoise: '#0fbfcf'
-  
-  intro:	'#002F43'
-  agile: 	'#12A9B0'
-  easy:		'#ABC8D6'
-  effective:'#E3747A'
-  practical:'#D3215D'
-  play:		'#002F43'
